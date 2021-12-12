@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Photo Selector</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link href=".\photo.css" rel="stylesheet" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    
+  </head>
+  <body>
+    <!-- <div class="container"> -->
+      <!-- photo lint -->
+      <!--
+      <div class="photo-container">
+      <h1>Photos</h1>
+      <h4>Overview of photos</h4>
+      <div class="row">
+        <div class="column">
+          <img
+            src=".\images\PhotoSelector1.jpg"
+            onclick="photoSelect(this)"
+            style="width: 100%"
+          />
+        </div>
+        <div class="column">
+          <img
+            src=".\images\PhotoSelector2.jpg"
+            onclick="photoSelect(this)"
+            style="width: 100%"
+          />
+        </div>
+        <div class="column">
+          <img
+            src=".\images\PhotoSelector3.jpg"
+            onclick="photoSelect(this)"
+            style="width: 100%"
+          />
+        </div>
+        <div class="column">
+          <img
+            src=".\images\PhotoSelector4.jpg"
+            onclick="photoSelect(this)"
+            style="width: 100%"
+          />
+        </div>
+        <div class="column">
+          <img
+            src=".\images\PhotoSelector5.jpg"
+            onclick="photoSelect(this)"
+            style="width: 100%"
+          />
+        </div>
+      </div>
+    </div>
+  -->
+    <!-- selected photo is enlarged -->
+    <!--
+    <div class="photo-chosen">
+    <h4>Your chosen photo</h4>
+    <div class="photo-select">
+      <div class="enlarged">
+        <img class="enlarged-img" src=".\images\PhotoSelector1.jpg" />
+      </div>
+      <div class="enlarged">
+        <img class="enlarged-img" src=".\images\PhotoSelector2.jpg" />
+      </div>
+      <div class="enlarged">
+        <img class="enlarged-img" src=".\images\PhotoSelector3.jpg" />
+      </div>
+      <div class="enlarged">
+        <img class="enlarged-img" src=".\images\PhotoSelector4.jpg" />
+      </div>
+      <div class="enlarged">
+        <img class="enlarged-img" src=".\images\PhotoSelector5.jpg" />
+      </div>
+    </div>
+    <div class="btn-container">
+      <button type="button" class="btn prevBtn">Previous</button>
+      <button type="button" class="btn nextBtn">Next</button>
+    </div>
+  </div>
+  </div>
+-->
+
+
+
+<!-- image slider jquery -->
+
+ <!-- Image container of the image slider -->
+ <div class="image-container">
+  <div class="slide">
+      <img src= "C:\Users\Laura\OneDrive\Webdesign\PhotoSelector\images\astronomy.jpg">
+  </div>
+  <div class="slide">
+      <img src= "C:\Users\Laura\OneDrive\Webdesign\PhotoSelector\images\chipmunk.jpg">
+  </div>
+  <div class="slide">
+      <img src= "C:\Users\Laura\OneDrive\Webdesign\PhotoSelector\images\fox.jpg">
+  </div>
+  <div class="slide">
+    <img src= "C:\Users\Laura\OneDrive\Webdesign\PhotoSelector\images\landscape.jpg">
+</div>
+<div class="slide">
+    <img src= "C:\Users\Laura\OneDrive\Webdesign\PhotoSelector\images\mountain.jpg">
+</div>
+<div class="slide">
+    <img src= "C:\Users\Laura\OneDrive\Webdesign\PhotoSelector\images\national-park.jpg">
+</div>
+<div class="slide">
+  <img src= "C:\Users\Laura\OneDrive\Webdesign\PhotoSelector\images\river.jpg">
+</div>
+
+ <!-- Next and Previous icon to change images -->
+ <a class="previous" onclick="moveSlides(-1)">
+  <i class="fa fa-chevron-circle-left"></i>
+</a>
+<a class="next" onclick="moveSlides(1)">
+  <i class="fa fa-chevron-circle-right"></i>
+</a>
+</div>
+<br>
+
+<div class="dot-container">
+<span class="footerdot" 
+  onclick="activeSlide(1)">
+</span>
+<span class="footerdot"
+  onclick="activeSlide(2)">
+</span>
+<span class="footerdot" 
+  onclick="activeSlide(3)">
+</span>
+  <span class="footerdot" 
+  onclick="activeSlide(4)">
+</span>
+<span class="footerdot"
+  onclick="activeSlide(5)">
+</span>
+<span class="footerdot" 
+  onclick="activeSlide(6)">
+</span>
+<span class="footerdot" 
+  onclick="activeSlide(7)">
+</span>
+</div>
+
+
+  </body>
+  <script src=".\photo.js" type="text/javascript"></script>
+</html>
