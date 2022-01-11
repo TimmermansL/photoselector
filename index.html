@@ -2,11 +2,11 @@
 <html lang="en">
   <head>
     <title>Photo Selector</title>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
     <link href=".\photo.css" rel="stylesheet" />
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    
   </head>
   <body>
 
@@ -14,9 +14,9 @@
  <!-- Image container of the images -->
  <div class="image-container">
   <div class="image">
-      <img src= "C:\Users\Laura\OneDrive\Webdesign\PhotoSelector\images\astronomy.jpg">
+      <img src= ".\images\photo-1.jpg" id = "image-large"  alt='large image'>
   </div>
-  <div class="image">
+  <!-- <div class="image">
       <img src= "C:\Users\Laura\OneDrive\Webdesign\PhotoSelector\images\chipmunk.jpg">
   </div>
   <div class="image">
@@ -33,13 +33,13 @@
 </div>
 <div class="image">
   <img src= "C:\Users\Laura\OneDrive\Webdesign\PhotoSelector\images\river.jpg">
-</div>
+</div> -->
 
  <!-- Next and Previous icon to change images -->
- <a class="previous" onclick="moveImages(-1)">
+ <a class="previous" onclick="moveImage(-1)">
   <i class="fa fa-chevron-circle-left fa-stroke fa-stroke-left"></i>
 </a>
-<a class="next" onclick="moveImages(1)">
+<a class="next" onclick="moveImage(1)">
   <i class="fa fa-chevron-circle-right fa-stroke fa-stroke-right"></i>
 </a>
 </div>
@@ -47,7 +47,7 @@
 
 <!-- Dot container to change item -->
 <div class="dot-container">
-<span class="footerdot" 
+<span class="footerdot active" 
   onclick="activeImage(1)">
 </span>
 <span class="footerdot"
@@ -75,26 +75,26 @@
 <!-- CARD LINT -->
 <div class="lint-container">
 <div class="slider">
-    <div class="card">
-      <img src= "C:\Users\Laura\OneDrive\Webdesign\PhotoSelector\images\astronomy.jpg">
+    <div class="image image-small">
+      <img src= "C:\Users\Laura\OneDrive\Webdesign\PhotoSelector\images\photo-1.jpg">
     </div>
-      <div class="card">
-          <img src= "C:\Users\Laura\OneDrive\Webdesign\PhotoSelector\images\chipmunk.jpg">
+      <div class="image image-small">
+          <img src= "C:\Users\Laura\OneDrive\Webdesign\PhotoSelector\images\photo-2.jpg">
       </div>
-      <div class="card">
-          <img src= "C:\Users\Laura\OneDrive\Webdesign\PhotoSelector\images\fox.jpg">
+      <div class="image image-small">
+          <img src= "C:\Users\Laura\OneDrive\Webdesign\PhotoSelector\images\photo-3.jpg">
       </div>
-      <div class="card">
-        <img src= "C:\Users\Laura\OneDrive\Webdesign\PhotoSelector\images\landscape.jpg">
+      <div class="image image-small">
+        <img src= "C:\Users\Laura\OneDrive\Webdesign\PhotoSelector\images\photo-4.jpg">
     </div>
-    <div class="card">
-        <img src= "C:\Users\Laura\OneDrive\Webdesign\PhotoSelector\images\mountain.jpg">
+    <div class="image image-small">
+        <img src= "C:\Users\Laura\OneDrive\Webdesign\PhotoSelector\images\photo-5.jpg">
     </div>
-    <div class="card">
-        <img src= "C:\Users\Laura\OneDrive\Webdesign\PhotoSelector\images\national-park.jpg">
+    <div class="image image-small">
+        <img src= "C:\Users\Laura\OneDrive\Webdesign\PhotoSelector\images\photo-6.jpg">
     </div>
-    <div class="card">
-      <img src= "C:\Users\Laura\OneDrive\Webdesign\PhotoSelector\images\river.jpg">
+    <div class="image image-small">
+      <img src= "C:\Users\Laura\OneDrive\Webdesign\PhotoSelector\images\photo-7.jpg">
     </div>
 
   </div>
@@ -107,5 +107,5 @@
   </body>
   <script src=".\photo.js" type="text/javascript"></script>
   <script src="https://kit.fontawesome.com/c8af220435.js" crossorigin="anonymous"></script>
-  <script src="https://npmcdn.com/flickity@2/dist/flickity.pkgd.js"></script>
+  <!-- <script src="https://npmcdn.com/flickity@2/dist/flickity.pkgd.js"></script> -->
 </html>

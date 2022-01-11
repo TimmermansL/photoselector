@@ -79,7 +79,6 @@ p {
   color: var(--clr-grey-5);
 }
 
-
 /* LARGE IMAGE */
 
 img {
@@ -88,18 +87,18 @@ img {
 .height {
   height: 10px;
 }
-     
+
 /* Image-container design */
 .image-container {
   max-width: 800px;
   position: relative;
   margin: auto;
 }
-     
+
 .next {
   right: 0;
 }
-     
+
 /* Next and previous icon design */
 .previous,
 .next {
@@ -114,14 +113,18 @@ img {
 .previous:hover,
 .next:hover {
   background-color: rgba(255, 255, 255, 0.3);
-  background-color: linear-gradient(to right,  rgba(255, 255, 255, 0.3),  rgba(255, 255, 255, 0.1) ) ;
+  background-color: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0.3),
+    rgba(255, 255, 255, 0.1)
+  );
   height: 50%;
 }
-     
+
 .fa {
   font-size: 32px;
 }
-     
+
 .fa:hover {
   /* transform: rotate(360deg); */
   transition: 1s;
@@ -145,7 +148,7 @@ img {
 
 /* Dot container design */
 .dot-container {
-  text-align:center;
+  text-align: center;
   display: block;
 }
 
@@ -159,12 +162,11 @@ img {
   display: inline-block;
   transition: background-color 0.5s ease;
 }
-     
+
 .active,
 .footerdot:hover {
   background-color: black;
 }
-
 
 /* CARD LINT */
 
@@ -194,19 +196,18 @@ img {
   margin: 0;
   opacity: 0;
 }
-  .lint-container .animation-reveal {
-    animation: reveal 1s cubic-bezier(0.77, 0, 0.175, 1);
+.lint-container .animation-reveal {
+  animation: reveal 1s cubic-bezier(0.77, 0, 0.175, 1);
 
-    @keyframes reveal {
-      0% {
-        opacity: 0;
-      }
-      100% {
-        opacity: 1;
-      }
+  @keyframes reveal {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
     }
   }
-
+}
 
 .card {
   margin: 0 1rem;
@@ -258,4 +259,9 @@ img {
   position: absolute;
   width: 100%;
   height: 100%;
+}
+
+/* GENERAL */
+.hidden {
+  display: none;
 }
