@@ -84,15 +84,13 @@ p {
 img {
   width: 100%;
 }
-.height {
-  height: 10px;
-}
 
 /* Image-container design */
 .image-container {
   max-width: 800px;
+  /* height: auto; */
   position: relative;
-  margin: auto;
+  /* box-sizing: content-box; */ /* box te groot onderaan*/
 }
 
 .next {
@@ -104,46 +102,36 @@ img {
 .next {
   cursor: pointer;
   position: absolute;
-  top: 50%;
-  padding: 10px;
-  margin-top: -25px;
-  color: rgba(255, 255, 255, 0.5);
+  top: 0%;
+  bottom: 0%;
+  color: rgba(255, 255, 255, 0.5); /* fa buttons */
+  font-size: 32px;
+}
+.previous {
+  padding: 30% 25px 30% 10px;
+}
+.next {
+  padding: 30% 10px 30% 25px;
 }
 
 .previous:hover,
 .next:hover {
-  background-color: rgba(255, 255, 255, 0.3);
-  background-color: linear-gradient(
+  transition: 1s;
+  color: rgba(255, 255, 255, 0.8);
+}
+.previous:hover {
+  background-image: linear-gradient(
     to right,
-    rgba(255, 255, 255, 0.3),
-    rgba(255, 255, 255, 0.1)
+    rgba(255, 255, 255, 0.6),
+    rgba(255, 255, 255, 0.01)
   );
-  height: 50%;
 }
-
-.fa {
-  font-size: 32px;
-}
-
-.fa:hover {
-  /* transform: rotate(360deg); */
-  transition: 1s;
-  color: white;
-}
-
-.fa-stroke:hover {
-  stroke: white;
-  stroke-width: 45px;
-  stroke-opacity: 0.5;
-  transition: 1s;
-}
-
-.fa-stroke-left.hover {
-  text-align: left;
-}
-
-.fa-stroke-right.hover {
-  text-align: right;
+.next:hover {
+  background-image: linear-gradient(
+    to left,
+    rgba(255, 255, 255, 0.6),
+    rgba(255, 255, 255, 0.01)
+  );
 }
 
 /* Dot container design */

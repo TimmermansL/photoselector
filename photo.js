@@ -1,65 +1,46 @@
 /* SELECTING ELEMENTS */
-// const totalImages = document.querySelectorAll(".image");
 const largeImage = document.getElementById("image-large");
 const smallImage = document.querySelectorAll(".image-small");
 const dots = document.querySelectorAll(".footerdot");
 const current = document.querySelectorAll(".active");
 
-let imageIndex;
+let imageIndex, side;
 
 /* STARTING CONDITIONS */
 const init = function () {
-  imageIndex = 2;
+  imageIndex = 1;
 };
 init();
 
 /* LARGE IMAGE */
 const activeImage = function (imageIndex) {
-  // if (imageIndex > smallImage.length) {
-  //   imageIndex = 1;
-  // }
-  // if (imageIndex < 1) {
-  //   imageIndex = smallImage.length;
-  // }
-  // for (let i = 0; i < smallImage.length; i++) {
   largeImage.src = `./images/photo-${imageIndex}.jpg`;
-  dots[4].classList.add("active");
-  dots[1].classList.remove("active");
-  // dots.style.remove("active");
-  // this.add("active");
-  // }
-};
 
-/* PREVIOUS / NEXT */
-const moveImage = function () {
+  // `activeImage(${imageIndex})`
+  //   ? dots.className.add(" active")
+  //   : dots.classList.remove(" active");
+};
+// console.log(activeImage(3));
+
+/* PREVIOUS / NEXT BUTTONS */
+const moveImage = function (side) {
   for (let i = 0; i < smallImage.length; i++) {
-    current[i];
-    if (imageIndex > smallImage.length) {
-      imageIndex = 1;
-    }
-    if (imageIndex < 1) {
-      imageIndex = smallImage.length;
+    // if (i > smallImage.length) {
+    //   imageIndex = 1;
+    // }
+    // if (i < 1) {
+    //   imageIndex = smallImage.length;
+    // }
+    if (side === 1) {
+      largeImage.src = `./images/photo-${imageIndex++}.jpg`;
+    } else if (side === -1) {
+      largeImage.src = `./images/photo-${imageIndex--}.jpg`;
     }
   }
 };
 
-console.log(current);
-
-/* Main function */
-//
-// for (i = 0; i < smallImage.length; i++) {
-//   smallImage[i].style.display = "none";
-// }
-// for (i = 0; i < dots.length; i++) {
-//   dots[i].className = totalDots[i].className.replace(" active", "");
-// }
-// smallImage[imageIndex - 1].style.display = "block";
-// dots[imageIndex - 1].className += " active";
-
-// var faStroke = document.getElementsByClassName("fa-stroke");
-// addEventListener("mouseover", function () {
-//   displayStroke(faStroke);
-// });
+console.log(moveImage(1));
+console.log(imageIndex);
 
 // /* CARD LINT */
 
