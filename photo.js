@@ -1,49 +1,50 @@
+"use strict";
+
 /* SELECTING ELEMENTS */
-const largeImage = document.getElementById("image-large");
-const smallImage = document.querySelectorAll(".image-small");
+const imageLarge = document.getElementById("image-large");
+const imageSmall = document.querySelectorAll(".image-small");
 const dots = document.querySelectorAll(".footerdot");
-const current = document.querySelectorAll(".active");
 
 let imageIndex, side;
 
 /* STARTING CONDITIONS */
 const init = function () {
-  imageIndex = 1;
+  imageIndex = 0;
 };
 init();
 
-/* LARGE IMAGE */
-const activeImage = function (imageIndex) {
-  largeImage.src = `./images/photo-${imageIndex}.jpg`;
-
-  // `activeImage(${imageIndex})`
-  //   ? dots.className.add(" active")
-  //   : dots.classList.remove(" active");
-};
-// console.log(activeImage(3));
-
-/* PREVIOUS / NEXT BUTTONS */
-const moveImage = function (side) {
-  for (let i = 0; i < smallImage.length; i++) {
-    // if (i > smallImage.length) {
-    //   imageIndex = 1;
-    // }
-    // if (i < 1) {
-    //   imageIndex = smallImage.length;
-    // }
-    if (side === 1) {
-      largeImage.src = `./images/photo-${imageIndex++}.jpg`;
-    } else if (side === -1) {
-      largeImage.src = `./images/photo-${imageIndex--}.jpg`;
-    }
+/* PREVIOUS / NEXT BUTTONS */ /*for loop nodig? ik krijg de ifs niet samen*/
+for (let i = 0; i < imageSmall.length; i++) {
+  if (imageIndex[i] >= imageSmall.length) {
+    imageIndex = 0;
+  } else if (imageIndex[i] < 0) {
+    imageIndex = imageSmall.length - 1;
   }
+}
+
+const moveImage = function (side) {
+  if (side === 1) {
+    imageIndex++;
+    imageLarge.src = `./images/photo-${imageIndex}.jpg`;
+  } else if (side === -1) {
+    imageIndex--;
+    imageLarge.src = `./images/photo-${imageIndex}.jpg`;
+  }
+  console.log(imageIndex);
 };
 
-console.log(moveImage(1));
-console.log(imageIndex);
+/* CARD LINT */
+const activeImage = function (imageIndex) {
+  imageLarge.src = `./images/photo-${imageIndex}.jpg`;
+  for (let j = 0; j < imageSmall.length; j++)
+    if (j === imageIndex) {
+      imageSmall[j].classList.add("active");
+    } else {
+      imageSmall[j].classList.remove("active");
+    }
+};
 
-// /* CARD LINT */
-
+//////////////////////////////////////
 // (function ($) {
 //   $(function () {
 //     var slider = $(".slider").flickity({
@@ -84,7 +85,7 @@ console.log(imageIndex);
 //     }
 //     requestAnimationFrame(reposition);
 
-//     // NO this expands the cards when in focus
+//     // this expands the cards when in focus
 //     /* flkty.on("settle", () => {
 //             $(".card").removeClass("is-custom-selected");
 //             $(".flickity-prev-next-button").css("pointer-events", "none");
@@ -103,7 +104,7 @@ console.log(imageIndex);
 //           });
 //           */
 
-//     //this reveals the lint-container
+//     // NO this reveals the lint-container
 //     $(".lint-container").addClass("animation-reveal");
 //     $(".lint-container").css("opacity", "0");
 //     flkty.resize();
@@ -124,3 +125,4 @@ console.log(imageIndex);
 //     }, 1000);
 //   });
 // })(jQuery);
+//
