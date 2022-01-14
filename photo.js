@@ -1,9 +1,22 @@
 "use strict";
 
+/* PHOTO ARRAY */
+const photos = [
+  "photo-0.jpg",
+  "photo-1.jpg",
+  "photo-2.jpg",
+  "photo-3.jpg",
+  "photo-4.jpg",
+  "photo-5.jpg",
+  "photo-6.jpg",
+];
+
+for (let i = 0; i < photos.length; i++) {
+  document.getElementById(`photo${[i]}`).src = "./images/" + photos[i];
+}
 /* SELECTING ELEMENTS */
 const imageLarge = document.getElementById("image-large");
 const imageSmall = document.querySelectorAll(".image-small");
-const dots = document.querySelectorAll(".footerdot");
 
 let imageIndex, side;
 
@@ -13,24 +26,17 @@ const init = function () {
 };
 init();
 
-/* PREVIOUS / NEXT BUTTONS */ /*for loop nodig? ik krijg de ifs niet samen*/
-for (let i = 0; i < imageSmall.length; i++) {
-  if (imageIndex[i] >= imageSmall.length) {
-    imageIndex = 0;
-  } else if (imageIndex[i] < 0) {
-    imageIndex = imageSmall.length - 1;
-  }
-}
-
+/* PREVIOUS / NEXT BUTTONS */
 const moveImage = function (side) {
   if (side === 1) {
     imageIndex++;
+    if (imageIndex >= photos.length) imageIndex = 0;
     imageLarge.src = `./images/photo-${imageIndex}.jpg`;
   } else if (side === -1) {
     imageIndex--;
+    if (imageIndex < 0) imageIndex = photos.length - 1;
     imageLarge.src = `./images/photo-${imageIndex}.jpg`;
   }
-  console.log(imageIndex);
 };
 
 /* CARD LINT */
@@ -43,6 +49,36 @@ const activeImage = function (imageIndex) {
       imageSmall[j].classList.remove("active");
     }
 };
+
+/* SLIDER */
+const slider = document.querySelector(".slider");
+let isDown = false;
+let startX;
+let scrollLeft;
+
+slider.addEventListener("mousedown", (e) => {
+  isDown = true;
+  slider.classList.add("active");
+  startX = e.pageX - slider.offsetLeft;
+  scrollLeft = slider.scrollLeft;
+});
+slider.addEventListener("mouseleave", (_) => {
+  isDown = false;
+  slider.classList.remove("active");
+});
+slider.addEventListener("mouseup", (_) => {
+  isDown = false;
+  slider.classList.remove("active");
+});
+slider.addEventListener("mousemove", (e) => {
+  // isDown = true;
+  if (!isDown) return;
+  e.preventDefault();
+  const x = e.pageX - slider.offsetLeft;
+  const scrollSpeed = 3;
+  const walk = (x - startX) * scrollSpeed;
+  slider.scrollLeft = scrollLeft - walk;
+});
 
 //////////////////////////////////////
 // (function ($) {
